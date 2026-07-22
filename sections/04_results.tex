@@ -1,0 +1,92 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section{Results}
+
+\subsection{Descriptive Results}
+
+During the study period, we identified dogs that were exposed to both wildfire \PM and PSPS events using our dog team members. We identified \npspsevents{} PSPS events affecting \zipcodeswithevents{} zip codes during the study period.
+
+% ============================================================
+% STANDALONE FIGURE (not wrapped)
+% ============================================================
+% This is the most common way to include figures in manuscripts.
+% The figure floats to a good location (usually top of a page).
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/pic1.jpeg}
+    \caption{Study team members conducting rigorous quality assurance of the fire exposure assessment protocol. Preliminary findings suggest high acceptability of the cozy conditions.}
+    \label{fig:dogs_standalone}
+\end{figure}
+
+We found that the dogs next to the fire were the coziest of all the dogs during both wildfire \PM and PSPS events.
+
+% ============================================================
+% FIGURE TIPS:
+% ============================================================
+% width=0.7\textwidth = 70% of text width (adjust as needed)
+% width=0.5\textwidth, width=3in, width=10cm all work
+% \centering = centers the figure
+% Always put \label{} right after \caption{} 
+% Reference with Figure~\ref{fig:label}
+%
+% Placement options [htbp]:
+%   h = here (where you typed it)
+%   t = top of page
+%   b = bottom of page
+%   p = on its own page
+%   ! = override LaTeX's judgment (use sparingly)
+%
+% If LaTeX keeps putting your figure in the wrong place, try [H] 
+% from the float package (forces exact placement, but can cause 
+% awkward page breaks).
+% ============================================================
+
+\subsection{Main Findings}
+
+Our trusty fireplace pups found associations of note in this study.
+
+% ============================================================
+% WRAPPED FIGURE (text flows around it)
+% ============================================================
+% Use wrapfigure for smaller images where you want text to wrap.
+% Good for: photos, small diagrams, logos
+% Bad for: complex figures that need full attention
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \vspace{-3em}
+    \includegraphics[width=0.25\textwidth]{images/pic2.png}
+    \caption{Alternative view of the quality assurance process, demonstrating the wrapped figure environment.}
+    \label{fig:dogs_wrapped}
+    \vspace{-3em}
+\end{wrapfigure}
+
+This paragraph demonstrates how text wraps around a figure. The wrapfigure environment is useful when you have a smaller image and don't want it to take up an entire page width. Notice how the text flows naturally around the image on the right side. 
+
+The first argument \{r\} specifies placement (r = right, l = left). The second argument \{0.45\textbackslash textwidth\} specifies how much horizontal space the figure occupies. You'll often need to experiment with these values to get things looking right.
+
+One important note: wrapfigure can be finicky near section headings, page breaks, and other floats. If you're having trouble, try moving the wrapfigure code earlier in your text, or just use a regular figure environment instead. Journals often prefer standard figures anyway.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This extra text is just here to demonstrate the text wrapping effect more clearly.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This extra text is just here to demonstrate the text wrapping effect more clearly.
+
+% ============================================================
+% WRAPFIGURE SYNTAX:
+% ============================================================
+% \begin{wrapfigure}{position}{width}
+%   position: r (right), l (left), R/L (float to nearest side)
+%   width: how wide the figure area is (e.g., 0.4\textwidth)
+%
+% Common issues:
+% - Doesn't work well near section headings
+% - Can cause weird spacing at page breaks
+% - Some journals don't accept wrapped figures
+% ============================================================
+
+\clearpage
+\end{document}

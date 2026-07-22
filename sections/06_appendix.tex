@@ -1,0 +1,61 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section{Appendix: Quick Reference \& Troubleshooting}
+
+\subsection*{Common Error Messages}
+
+\textbf{``Missing \$ inserted''} -- You used a special character (like \_ or \^{}) outside of math mode. Either escape it (\textbackslash\_) or wrap in dollar signs (\$x\_1\$).
+
+\textbf{``Undefined control sequence''} -- You used a command that doesn't exist, often a typo. Check spelling and make sure the required package is loaded.
+
+\textbf{``Missing \} inserted''} -- You forgot to close a brace somewhere. Count your \{ and \} to find the mismatch.
+
+\textbf{``Reference undefined''} -- You referenced a label that doesn't exist, or you need to compile again. Check for typos in your \textbackslash ref\{\} commands.
+
+\textbf{``Citation undefined''} -- The citation key doesn't match anything in your .bib file. Check for typos and make sure your .bib file is saved.
+
+\subsection*{Special Characters}
+
+These characters have special meaning in \LaTeX{} and need to be escaped:
+
+\begin{tabular}{ll}
+\toprule
+\textbf{Character} & \textbf{How to type it} \\
+\midrule
+\% & \textbackslash\% \\
+\$ & \textbackslash\$ \\
+\& & \textbackslash\& \\
+\# & \textbackslash\# \\
+\_ & \textbackslash\_ \\
+\{ \} & \textbackslash\{ \textbackslash\} \\
+\textbackslash & \textbackslash textbackslash \\
+\bottomrule
+\end{tabular}
+
+\subsection*{Useful Resources}
+
+\begin{itemize}
+    \item \textbf{Overleaf Documentation}: \texttt{overleaf.com/learn}
+    \item \textbf{Stack Exchange}: \texttt{tex.stackexchange.com} (search before asking!)
+    \item \textbf{Detexify}: \texttt{detexify.kirelabs.org} (draw a symbol, get the \LaTeX{} code)
+    \item \textbf{Tables Generator}: \texttt{tablesgenerator.com} (paste from Excel, get \LaTeX{})
+\end{itemize}
+
+\subsection*{Exporting from R}
+
+If you use R, these packages can export \LaTeX{} tables directly:
+
+\begin{itemize}
+    \item \texttt{kableExtra} -- great for simple tables
+    \item \texttt{gtsummary} -- perfect for Table 1 demographics
+    \item \texttt{stargazer} -- good for regression output
+    \item \texttt{xtable} -- the classic option
+\end{itemize}
+
+From any coding language, export figures as PDF (not PNG/JPEG) when possible---they scale better and look sharper in the final document.
+
+\clearpage
+\end{document}

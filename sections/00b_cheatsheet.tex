@@ -1,0 +1,213 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section*{LaTeX Cheat Sheet}
+
+% ============================================================
+% TEXT FORMATTING
+% ============================================================
+\subsection*{Text Formatting}
+\begin{tabular}{ll}
+\texttt{\textbackslash textbf\{text\}} & \textbf{bold text} \\
+\texttt{\textbackslash textit\{text\}} & \textit{italic text} \\
+\texttt{\textbackslash underline\{text\}} & \underline{underlined text} \\
+\texttt{\textbackslash texttt\{text\}} & \texttt{monospace/code text} \\
+\texttt{\textbackslash textsuperscript\{2\}} & superscript\textsuperscript{2} \\
+\texttt{\textbackslash textsubscript\{i\}} & subscript\textsubscript{i} \\
+\end{tabular}
+
+\vspace{1em}
+
+% ============================================================
+% SPECIAL CHARACTERS
+% ============================================================
+\subsection*{Special Characters}
+These must be escaped with a backslash:
+
+\begin{tabular}{llllll}
+\texttt{\textbackslash\%} → \% &
+\texttt{\textbackslash\$} → \$ &
+\texttt{\textbackslash\&} → \& &
+\texttt{\textbackslash\#} → \# &
+\texttt{\textbackslash\_} → \_ &
+\texttt{\textbackslash\{} \texttt{\textbackslash\}} → \{ \} \\
+\end{tabular}
+
+\vspace{0.5em}
+
+\begin{tabular}{ll}
+\texttt{-{}-} & en-dash (ranges): 2017--2022 \\
+\texttt{-{}-{}-} & em-dash (breaks): like this---here \\
+\texttt{``text''} & proper quotes: ``quoted text'' \\
+\end{tabular}
+
+\vspace{1em}
+
+% ============================================================
+% MATH MODE
+% ============================================================
+\subsection*{Math Mode}
+\begin{tabular}{ll}
+\texttt{\$x\$} & inline math: $x$ \\
+\texttt{\$x\_\{i\}\$} & subscript: $x_{i}$ \\
+\texttt{\$x\^{}\{2\}\$} & superscript: $x^{2}$ \\
+\texttt{\$\textbackslash alpha\$, \$\textbackslash beta\$} & Greek letters: $\alpha$, $\beta$, $\mu$, $\sigma$ \\
+\texttt{\$\textbackslash frac\{a\}\{b\}\$} & fractions: $\frac{a}{b}$ \\
+\texttt{\$\textbackslash geq\$, \$\textbackslash leq\$} & inequalities: $\geq$, $\leq$ \\
+\texttt{\$\textbackslash pm\$} & plus/minus: $\pm$ \\
+\texttt{\$\textbackslash times\$} & multiplication: $\times$ \\
+\end{tabular}
+
+\vspace{0.5em}
+
+Display equation (centered, numbered):
+\begin{verbatim}
+\begin{equation}
+    y = mx + b
+    \label{eq:line}
+\end{equation}
+\end{verbatim}
+
+\vspace{1em}
+
+% ============================================================
+% UNITS (siunitx package)
+% ============================================================
+\subsection*{Units with siunitx}
+\begin{tabular}{ll}
+\texttt{\textbackslash SI\{35\}\{\textbackslash micro\textbackslash gram\textbackslash per\textbackslash cubic\textbackslash meter\}} & \SI{35}{\micro\gram\per\cubic\meter} \\
+\texttt{\textbackslash SI\{25\}\{\textbackslash celsius\}} & \SI{25}{\celsius} \\
+\texttt{\textbackslash SI\{10\}\{\textbackslash percent\}} & \SI{10}{\percent} \\
+\end{tabular}
+
+\vspace{1em}
+
+% ============================================================
+% FIGURES
+% ============================================================
+\subsection*{Figures}
+\begin{verbatim}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/myplot.pdf}
+    \caption{Your caption here.}
+    \label{fig:myplot}
+\end{figure}
+\end{verbatim}
+
+Placement options: \texttt{h} = here, \texttt{t} = top, \texttt{b} = bottom, \texttt{p} = own page, \texttt{H} = force here
+
+\vspace{1em}
+
+% ============================================================
+% TABLES
+% ============================================================
+\subsection*{Tables}
+\begin{verbatim}
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Header 1} & \textbf{Header 2} & \textbf{Header 3} \\
+\midrule
+Row 1 & Data & Data \\
+Row 2 & Data & Data \\
+\bottomrule
+\end{tabular}
+\caption{Your caption here.}
+\label{tab:mytable}
+\end{table}
+\end{verbatim}
+
+Column alignment: \texttt{l} = left, \texttt{c} = center, \texttt{r} = right, \texttt{p\{2in\}} = fixed width
+
+\vspace{1em}
+
+% ============================================================
+% CITATIONS
+% ============================================================
+\subsection*{Citations}
+\begin{tabular}{ll}
+\texttt{\textbackslash citep\{key\}}  & parenthetical/superscript citation \\
+\texttt{\textbackslash citep\{key1, key2\}} & multiple citations \\
+\end{tabular}
+
+\vspace{0.5em}
+
+Get citation keys from your \texttt{.bib} file (export from Zotero/EndNote/Google Scholar).
+
+\vspace{1em}
+
+% ============================================================
+% CROSS-REFERENCES
+% ============================================================
+\subsection*{Cross-References}
+\begin{tabular}{ll}
+\texttt{\textbackslash label\{fig:myplot\}} & add label (after \textbackslash caption) \\
+\texttt{Figure\~{}\textbackslash ref\{fig:myplot\}} & reference it → Figure 1 \\
+\texttt{Table\~{}\textbackslash ref\{tab:mytable\}} & reference table \\
+\texttt{Equation\~{}\textbackslash ref\{eq:model\}} & reference equation \\
+\texttt{Section\~{}\textbackslash ref\{sec:methods\}} & reference section \\
+\end{tabular}
+
+\vspace{0.5em}
+
+The \texttt{\~{}} creates a non-breaking space. Compile twice for references to update!
+
+\vspace{1em}
+
+% ============================================================
+% LISTS
+% ============================================================
+\subsection*{Lists}
+\begin{minipage}[t]{0.45\textwidth}
+Bullet points:
+\begin{verbatim}
+\begin{itemize}
+    \item First item
+    \item Second item
+\end{itemize}
+\end{verbatim}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+Numbered list:
+\begin{verbatim}
+\begin{enumerate}
+    \item First item
+    \item Second item
+\end{enumerate}
+\end{verbatim}
+\end{minipage}
+
+\vspace{1em}
+
+% ============================================================
+% SPACING
+% ============================================================
+\subsection*{Spacing}
+\begin{tabular}{ll}
+\texttt{\textbackslash vspace\{1em\}} & vertical space (customize amount) \\
+\texttt{\textbackslash bigskip} & large vertical skip \\
+\texttt{\textbackslash medskip} & medium vertical skip \\
+\texttt{\textbackslash smallskip} & small vertical skip \\
+\texttt{\textbackslash clearpage} & start new page \\
+\end{tabular}
+
+\vspace{1em}
+
+% ============================================================
+% HELPFUL RESOURCES
+% ============================================================
+\subsection*{Helpful Resources}
+\begin{tabular}{ll}
+\textbf{Overleaf docs} & \texttt{overleaf.com/learn} \\
+\textbf{Symbol lookup} & \texttt{detexify.kirelabs.org} (draw it!) \\
+\textbf{Table generator} & \texttt{tablesgenerator.com} \\
+\textbf{Q\&A} & \texttt{tex.stackexchange.com} \\
+\end{tabular}
+
+\clearpage
+\end{document}

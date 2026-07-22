@@ -1,0 +1,102 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Study Population}
+In this zip code-level time-stratified case-crossover\citep{lumley_bias_2000} study in California, we used data on emergency department visits and hospital admissions among adults $\geq$ 20 years of age from 2013 -- 2019 from the California Department of Health Care Access and Information (HCAI), \citep{noauthor_hcai_nodate} across 1,481 California zip codes where we had access to power outage data and at least one healthcare encounter occurred (97\% of zip codes). 
+
+\subsection{Outcome}
+Using primary diagnosis codes, we identified combined daily counts of emergency department visits and unscheduled hospital admissions for the following causes: all-cause respiratory, COPD, cardiovascular, and psychiatric (Table~\ref{tab:icd_codes}). Diagnostic codes outside the primary position were not used. 
+
+
+% ============================================================
+% BASIC TABLE 
+% ============================================================
+% - The table environment makes it "float" (LaTeX decides placement)
+% - [htbp] = here, top, bottom, page (placement preferences)
+% - tabular defines the actual table content
+% - l, c, r = left, center, right alignment for columns
+% - \hline = horizontal line
+% - & separates columns, \\ ends rows
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{0.18\textwidth}|p{0.39\textwidth}|p{0.39\textwidth}|}
+\hline
+\textbf{Health endpoint} & \textbf{\textit{ICD-9 Codes}} & \textbf{\textit{ICD-10 Codes}} \\
+\hline
+Respiratory & 460-466, 471, 472, 477, 478, 480-487, 490-496, 511, 513-519, 786 & J00-J06, J12-J18, J20-J22, J30, J31, J33, J34, J38, J39, J40-J47, J80-J86, J90-J92, J94, J96-J99, R04-R07, R09 \\
+\hline
+COPD & 491-492, 496 & J41-44 \\
+\hline
+Cardiovascular & 390-398, 401-417, 420-429, 440-449 & I00-I02, I05-I16, I20-I28, I30-I5A, I70-I79 \\
+\hline
+Psychiatric & 290-293, 295, 296, 298 & F06, F10-F16, F18-F21, F23, F25, F28-F33 \\
+\hline
+\end{tabular}
+\caption{\textit{International Classification of Disease, Ninth Edition} (\textit{ICD}-9) and \textit{Tenth Edition} (\textit{ICD}-10) codes used in analysis, by medical condition. COPD, chronic obstructive pulmonary disease.} 
+\label{tab:icd_codes}
+\end{table}
+
+% ============================================================
+% TABLE TIPS:
+% ============================================================
+% - \toprule, \midrule, \bottomrule are from booktabs (looks better than \hline)
+% - \quad adds indentation for subcategories
+% - Always include \label{} right after \caption{} for cross-referencing
+% - Reference with Table~\ref{tab:label} (the ~ prevents awkward line breaks)
+% ============================================================
+
+
+\subsection{Statistical Analysis}
+We used conditional logistic regression to estimate odds ratios. The model can be expressed as:
+% ============================================================
+% EQUATIONS
+% ============================================================
+% Inline math: $x^2$ or $\mu$g/m$^3$
+% Display math: use the equation environment
+
+\textbf{Model equation.}
+\begin{equation}
+\label{eq:model}
+\log\left(\frac{p_{ij}}{1-p_{ij}}\right) = \alpha_i + \beta_1 \cdot PSPS_{ij} + \beta_2 \cdot PM_{2.5,ij} + \beta_3 \cdot (PSPS_{ij} \times PM_{2.5,ij}) + f(Temp_{max,ij})
+\end{equation}
+
+where: $p_{ij} = P(Y_{ij} = 1 | X_{ij}, C_{ij})$ for a case $(j = 1)$ or a control $(j = 0)$ in stratum $ij$. $i$ represents each stratum and $j$ represents a case or control in that stratum.
+
+\vspace{1em}
+
+\textbf{Parameter Definitions}
+\begin{itemize}
+\item $\alpha_i$: stratum-specific intercept that accounts for the baseline risk of the health outcome in each stratum, or matched set in this case. 
+\item $\beta_1$: log odds ratio for emergency department visit or hospital admission associated with exposure to a PSPS event (binary indicator), assuming no wildfire PM$_{2.5}$ exposure and adjusted for temperature
+\item $\beta_2$: log odds ratio for emergency department visit or hospital admission per \SI[per-mode=symbol]{10}{\micro\gram\per\cubic\metre} higher 5-day average wildfire PM$_{2.5}$ concentration, assuming no PSPS event exposure and adjusted for temperature
+\item $\beta_3$: log odds ratio for the multiplicative interaction between PSPS event exposure and wildfire \PM (per \SI[per-mode=symbol]{10}{\micro\gram\per\cubic\metre}). This is the additional effect of \SI[per-mode=symbol]{10}{\micro\gram\per\cubic\metre} higher wildfire \PM in the presence of a PSPS event. 
+\item $f(\mathrm{Temp_{max}})$: natural cubic spline with 3 degrees of freedom for daily maximum temperature.
+\end{itemize}
+
+\vspace{1em}
+
+The joint effect of a PSPS event and \SI[per-mode=symbol]{10}{\micro\gram\per\cubic\metre} higher \PM exposure was calculated as: $\beta_1 + \beta_2 + \beta_3$. 
+
+% ============================================================
+% EQUATION TIPS:
+% ============================================================
+% Common symbols:
+%   Greek letters: $\alpha$, $\beta$, $\gamma$, $\mu$, $\sigma$
+%   Subscripts: $X_1$ or $X_{exposure}$ (braces for multiple characters)
+%   Superscripts: $X^2$ or $e^{-x}$
+%   Fractions: $\frac{numerator}{denominator}$
+%   Square root: $\sqrt{x}$
+%   Sum: $\sum_{i=1}^{n} x_i$
+%   
+% Reference equations with Equation~\ref{eq:label}
+% ============================================================
+
+
+\clearpage
+\end{document}
