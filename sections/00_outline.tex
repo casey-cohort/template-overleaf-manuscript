@@ -1,0 +1,49 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section*{How to Use This Template}
+
+This is a tutorial template for writing manuscripts in \LaTeX{} using Overleaf. Each section is meant to provide an example of that section of a paper and contains some pieces that demonstrate some features you may find useful for writing papers.
+
+\subsection*{Template Structure}
+
+This project is organized into multiple files:
+
+\begin{itemize}
+    \item \texttt{main.tex} -- The ``conductor'' that pulls everything together
+    \item \texttt{doc\_setup.tex} -- Package imports and formatting settings
+    \item \texttt{analysis\-values.tex} -- Number plugging commands and values
+    \item \texttt{sections/} -- Individual section files (this modular approach keeps things much more organized!)
+    \item \texttt{images/} -- Store all figures or images here
+    \item \texttt{references.bib} -- Your bibliography file
+\end{itemize}
+
+\bigskip % one option for space between paragraphs
+
+\subsection*{What you will learn in each section:}
+
+\begin{itemize}
+    \item \textbf{Abstract \& Introduction}: Basic text formatting, sections, citations
+    \item \textbf{Methods}: Tables (simple and complex), equations
+    \item \textbf{Results}: Figures -- both standalone and wrapped in text, using number plugging tex file (\texttt{analysis-values.tex})
+    \item \textbf{Discussion}: Cross-referencing figures, tables, and sections
+    \item \textbf{Appendix}: Supplementary materials
+\end{itemize}
+
+\vspace{1em} % another option that you can customize
+
+\subsection*{Tip: comments}
+This template includes custom commands for leaving comments. Try them out:
+
+\lbw{This is Lauren's comment -- appears in blue.}
+
+\jac{This is a comment from JAC -- appears in red.}
+
+\mak{This is MAK's comment -- appears in magenta.}
+
+These are defined in \texttt{doc\_setup.tex} and you can add more for other collaborators. You can also use the track changes/comment features, which we will look at together. 
+
+\clearpage
+\end{document}

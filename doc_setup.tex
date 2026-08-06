@@ -1,0 +1,37 @@
+\usepackage[top=0.5in,bottom=0.5in,left=0.5in,right=0.5in]{geometry}    
+\usepackage{graphicx} % Required for inserting images
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{times}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{ragged2e}
+\usepackage{longtable}
+\usepackage{soul}
+\usepackage[super]{nth}
+\renewcommand\rmdefault{phv}
+\usepackage{siunitx}
+\usepackage[singlelinecheck=false, font={footnotesize,bf}]{caption}
+\usepackage[compact]{titlesec}  
+\usepackage{parskip}
+\captionsetup[figure]{skip=0pt, belowskip=0pt}
+\usepackage[super, comma, sort&compress]{natbib}
+\makeatletter % Reference list option change
+\renewcommand\@biblabel[1]{#1.} % from [1] to 1.
+
+\newcommand{\lbw}[1]{{\color{blue} \textbf{lbw:} #1}}
+\newcommand{\jac}[1]{{\color{red} \textbf{jac:} #1}}
+\newcommand{\mak}[1]{{\color{magenta} \textbf{mak:} #1}}
+\newcommand{\PM}{PM$_{2.5}$}
+
+\titleformat{\section}{\bfseries}{\thesection}{1ex}{}
+\titleformat{\subsection}{\bfseries}{}{0pt}{}
+\titleformat{\subsubsection}{\bfseries}{}{0pt}{}
+
+\titlespacing*{\section}{-0.2ex}{0.6ex}{0.6ex} %% left, top, bottom
+\titlespacing*{\subsection}{-0.2ex}{0.6ex}{0.6ex} %% left, top, bottom
+\titlespacing*{\subsubsection}{-0.2ex}{0.6ex}{0.6ex} %% left, top, bottom
+\titlespacing*{\paragraph}{-0.2ex}{0.2ex}{0.2ex} %% left, top, bottom

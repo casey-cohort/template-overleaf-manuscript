@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+\input{doc_setup}
+\usepackage{subfiles}
+\usepackage[super, comma, sort&compress]{natbib}
+
+\begin{document}
+% Dynamic values from the analysis repo, synced into tex_sync/ by GitHub Actions.
+% Overwritten on each sync; the committed copy lets the template compile standalone.
+\input{tex_sync/analysis-values.tex}
+
+
+\title{Casey Cohort: Tutorial on Overleaf + \LaTeX}
+\author{Lauren Blair Wilner}
+
+\maketitle
+\clearpage
+
+\subfile{sections/00_outline} % remove when finished
+\subfile{sections/00b_cheatsheet} % one-page reference
+
+\subfile{sections/00c_exampletitle} % transition to worked example
+\subfile{sections/01_abstract}
+\subfile{sections/02_introduction}
+\subfile{sections/03_methods}
+\subfile{sections/04_results}
+\subfile{sections/05_discussion}
+\subfile{sections/06_appendix}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references.bib}
+\clearpage
+
+\end{document}

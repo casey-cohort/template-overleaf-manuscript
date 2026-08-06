@@ -1,0 +1,78 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}{\subfix{../tables_figures_sync/}}}
+
+\begin{document}
+
+\section{Discussion}
+
+% ============================================================
+% CROSS-REFERENCING
+% ============================================================
+% This is one of LaTeX's superpowers! Label anything, reference it 
+% anywhere, and the numbers update automatically.
+
+\subsection{Summary of Findings}
+
+In this study, we examined associations between wildfire \PM, PSPS events, and health. As shown in Figure~\ref{fig:dogs_standalone}, our quality assurance team worked diligently throughout the study period. The ICD codes included in our study covered all relevant health outcomes, and Sally and Orion verified each code included (Table~\ref{tab:icd_codes}) were representative of the broader Northern California population.
+
+Our statistical approach, described by Equation~\ref{eq:model} in Section~\ref{sec:methods}, allowed us to control for time-invariant confounders through the case-crossover design.
+
+% ============================================================
+% CROSS-REFERENCE SYNTAX:
+% ============================================================
+% First, label something:
+%   \label{fig:myfigure}   (after \caption in figure)
+%   \label{tab:mytable}    (after \caption in table)  
+%   \label{eq:myequation}  (inside equation environment)
+%   \label{sec:methods}    (after \section{Methods})
+%
+% Then reference it:
+%   Figure~\ref{fig:myfigure}
+%   Table~\ref{tab:mytable}
+%   Equation~\ref{eq:myequation}
+%   Section~\ref{sec:methods}
+%
+% The ~ (tilde) creates a non-breaking space so "Figure" and "1" 
+% don't get separated across lines.
+%
+% IMPORTANT: You need to compile TWICE for references to work!
+% First compile creates the .aux file, second compile reads it.
+% (Overleaf usually handles this automatically)
+% ============================================================
+
+\subsection{Comparison with Prior Literature}
+
+Our findings are consistent with previous studies.\cite{harding_association_2025} The wrapped figure example (Figure~\ref{fig:dogs_wrapped}) demonstrates an alternative approach to figure placement that may be useful for smaller images.
+
+\subsection{Strengths and Limitations}
+
+A key strength of our study was the ICD codes included in Table~\ref{tab:icd_codes}. However, several other limitations and strengths should be noted.
+
+% ============================================================
+% LISTS IN LATEX
+% ============================================================
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Exposure misclassification may have biased results toward the null
+    \item We could not assess indoor air quality or air purifier use
+    \item Results may not generalize to uninsured populations
+\end{itemize}
+
+\textbf{Strengths:}
+\begin{enumerate}
+    \item The dogs are so cute
+    \item The fire is so warm
+    \item Warm dogs do a good job checking study methods
+\end{enumerate}
+
+% itemize = bullet points
+% enumerate = numbered list
+% You can nest lists inside each other
+
+\subsection{Conclusions}
+
+Studying wildfire \PM, PSPS events, and health outcomes with our dogs allow us to better understand how to prevent and respond to wildfires -- and to do so with a very competent study team.
+
+\clearpage
+\end{document}
